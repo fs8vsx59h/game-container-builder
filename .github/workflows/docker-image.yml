@@ -24,7 +24,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Change shell script permission
-        run: chmod 777 run-*
+        run: chmod +x run-master.sh run-master-and-caves.sh run-caves.sh
         shell: bash
       -
         name: Build and push
