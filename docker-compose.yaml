@@ -1,0 +1,20 @@
+version: "3"
+services:
+  dts-master:
+    image: poormancontainer/poormandtsonce:ghlatest
+    container_name: dts-master
+    network_mode: "host"
+    volumes:
+      - <saves dir>:/root/.klei/DoNotStarveTogether
+      - <dedicated_server_mods_setup.lua>:/dts/mods/dedicated_server_mods_setup.lua
+    restart: unless-stopped
+    command: "./run-master.sh"
+  dts-caves:
+    image: poormancontainer/poormandtsonce:ghlatest
+    container_name: dts-caves
+    network_mode: "host"
+    volumes:
+      - <saves dir>:/root/.klei/DoNotStarveTogether
+      - <dedicated_server_mods_setup.lua>:/dts/mods/dedicated_server_mods_setup.lua
+    restart: unless-stopped
+    command: "./run-caves.sh"
