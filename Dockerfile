@@ -11,7 +11,7 @@ RUN dpkg --add-architecture i386 \
 && wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz -O /steamcmd/steamcmd_linux.tar.gz \
 && tar -xzvf /steamcmd/steamcmd_linux.tar.gz -C /steamcmd \
 && /steamcmd/steamcmd.sh +force_install_dir /dts +login anonymous +app_update 343050 +quit 
-COPY run-master.sh /dts/bin64/run-master.sh 
-COPY run-master-and-caves.sh /dts/bin64/run-master-and-caves.sh 
-COPY run-caves.sh /dts/bin64/run-caves.sh
+COPY --chmod=777 run-master.sh /dts/bin64/run-master.sh 
+COPY --chmod=777 run-master-and-caves.sh /dts/bin64/run-master-and-caves.sh 
+COPY --chmod=777 run-caves.sh /dts/bin64/run-caves.sh
 WORKDIR /dts/bin64
