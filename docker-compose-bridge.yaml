@@ -8,6 +8,8 @@ services:
       - ${MODS}:/dts/mods/dedicated_server_mods_setup.lua
     restart: unless-stopped
     command: "./run-master.sh"   
+    ports:
+      - "11000:11000/udp"
     networks:
       cluster_net:
         ipv4_address: 172.16.238.10
@@ -20,6 +22,8 @@ services:
       - ${MODS}:/dts/mods/dedicated_server_mods_setup.lua
     restart: unless-stopped
     command: "./run-caves.sh"
+    ports:
+      - "11001:11001/udp"
     networks:
       cluster_net:
         ipv4_address: 172.16.238.11
