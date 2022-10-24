@@ -1,0 +1,10 @@
+version: "3"
+services:
+  dts-master:
+    image: poormancontainer/poormandtsonce:latest
+    container_name: dts-master
+    network_mode: "host"
+    volumes:
+      - ${SAVESDIR}:/root/.klei/DoNotStarveTogether
+      - ${MODSCONF}:/dts/mods/dedicated_server_mods_setup.lua
+    restart: unless-stopped
