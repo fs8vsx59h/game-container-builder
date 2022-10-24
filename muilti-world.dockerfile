@@ -17,4 +17,4 @@ COPY --chmod=777 run-master-and-caves.sh /dts/bin64/run-master-and-caves.sh
 COPY --chmod=777 run-caves.sh /dts/bin64/run-caves.sh
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 WORKDIR /dts/bin64
-CMD ["/usr/bin/supervisord -c /etc/supervisor/supervisord.conf"]
+CMD ["/usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf"]
