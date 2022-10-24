@@ -1,4 +1,4 @@
-name: ci
+name: muilti-world
 
 on:
   workflow_dispatch:
