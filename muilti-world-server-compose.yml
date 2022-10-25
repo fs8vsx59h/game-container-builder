@@ -1,6 +1,6 @@
 version: "3"
 services:
-  dts-master:
+  dts-cluster:
     image: poormancontainer/poormandtsonce:latest
     container_name: dts-master
     network_mode: "host"
