@@ -12,7 +12,6 @@ RUN dpkg --add-architecture i386 \
     && /steamcmd/steamcmd.sh +force_install_dir /dts +login anonymous +app_update 343050 +quit 
 COPY --chmod=777 run-master.sh /dts/bin64/run-master.sh 
 COPY --chmod=777 run-caves.sh /dts/bin64/run-caves.sh
-COPY --chmod=777 archive.sh /dts/bin64/archive.sh
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 WORKDIR /dts/bin64
 CMD ["/bin/bash","-c","/usr/bin/supervisord -c /etc/supervisor/supervisord.conf"]
